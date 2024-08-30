@@ -14,18 +14,18 @@ function App() {
                                                 title: text,
                                                 status: status,
                                                 isClosable: true,
-                                              }) //toast messages
+                                              }) //toast wrapper
 
   const checkItem = (item) => {
-                                //Checks if item is empty or if it already exists.
-                                //Used for adding and editing items to the list of todos
-                                if (item === "") {handleToast("Input is empty. Please write something","error"); 
-                                                  return false}
-                                if (listValue.filter(elem=> elem.text === item).length>0)
-                                                 {handleToast(`${item} already exists`,"error"); 
-                                                  return false}
-                                return true; 
-                              }
+    //Checks if item is empty or if it already exists.
+    //Used for adding and editing items to the list of todos
+    if (item === "") {handleToast("Input is empty. Please write something","error"); 
+      return false}
+    if (listValue.filter(elem=> elem.text === item).length>0)
+      {handleToast(`${item} already exists`,"error"); 
+      return false}
+    return true; 
+  }
   const addToList = (item) => {
                             if (checkItem(item)){
                                     setListValue(listValue => listValue.concat(
@@ -55,7 +55,7 @@ function App() {
       <Header />
 
       <Flex alignSelf="center" 
-             bg="primary.50"
+             bg="red.50"
              boxShadow="lg"
              align="center" 
              justify="space-around" 

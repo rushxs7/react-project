@@ -7,18 +7,18 @@ const Header = () => {
               justify="flex-start" 
               direction="column" 
               textAlign="center" 
-              color="primary.400"
+              color="red.600"
               mt={10} >
                         <Heading as="h1" 
                                 size="4xl" 
                                 fontFamily="title"
                                 fontWeight="extrabold">
-                                    To-do list
+                                    Sunday
                         </Heading>
                         <Text as="em" 
                               fontSize="lg" 
-                              color="secondary.200">
-                                  Simple App to manage your daily to-dos 
+                              color="gray.600">
+                                  Your weekly reset... 
                         </Text>
         </Flex>
     )

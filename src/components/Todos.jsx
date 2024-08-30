@@ -22,7 +22,7 @@ const Todos = ({data, deleteTodo, editTodo}) => {
     const handleInput = (value) => setEditValue(value)
     
     return (
-        <Stack mt={10} fontSize={{base:"xl", md:"2xl"}} textAlign="center" alignItems="center" spacing={6} bg="primary.50" borderRadius={10}>         
+        <Stack mt={10} fontSize={{base:"xl", md:"2xl"}} textAlign="center" alignItems="center" spacing={6} bg="red.50" borderRadius={10}>         
           <AnimatePresence>                   
             {data.length > 0 ?
                            <Stack 
@@ -41,8 +41,8 @@ const Todos = ({data, deleteTodo, editTodo}) => {
                                         exit={{scale:0}}
                                         animate={{scale:0.9}} 
                                         direction="row"
-                                        bg="primary.100"
-                                        color="primary.500"
+                                        bg="yellow.100"
+                                        color="yellow.500"
                                         p={2} 
                                         pt={4} 
                                         pb={4}
@@ -56,13 +56,13 @@ const Todos = ({data, deleteTodo, editTodo}) => {
                                                                           {elem.text}
                                                     </Text>
                                                     <IconButton 
-                                                                color="secondary.400" 
+                                                                color="red.400" 
                                                                 _hover={{bg:"whiteAlpha.500"}} 
                                                                 bg="transparent" 
                                                                 icon={<FaTrashAlt/> }
                                                                 onClick={()=>deleteTodo(elem.text)}/>
                                                     <IconButton 
-                                                                color="secondary.400" 
+                                                                color="red.400" 
                                                                 _hover={{bg:"whiteAlpha.500"}} 
                                                                 bg="transparent" 
                                                                 icon={<FaPencilAlt/>}
@@ -70,7 +70,8 @@ const Todos = ({data, deleteTodo, editTodo}) => {
                                         </Stack>))}
                                      </Stack>
                             : 
-                            <Alert borderRadius={10}
+                            <Alert status='warning'
+                                   borderRadius={10}
                                    px={10}
                                    py={5}
                                    mt={2}
@@ -87,7 +88,7 @@ const Todos = ({data, deleteTodo, editTodo}) => {
                  closeOnEsc
                  size="sm" >
           <ModalOverlay />
-          <ModalContent bg="secondary.100">
+          <ModalContent bg="yellow.100">
             <ModalHeader>Edit your to-do</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
@@ -97,12 +98,12 @@ const Todos = ({data, deleteTodo, editTodo}) => {
                                                 text:e.target.value})}/>
             </ModalBody>
             <ModalFooter>
-              <Button colorScheme="primary" 
+              <Button colorScheme="teal" 
                       mr={3} 
                       onClick={()=> {editTodo(editValue)? onClose() : null}}>
                 Edit
               </Button>
-              <Button variant="ghost"
+              <Button variant="gray"
                       onClick={onClose}>
                         Close
               </Button>
